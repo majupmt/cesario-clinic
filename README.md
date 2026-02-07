@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cesário Clinic
 
-## Getting Started
+Site institucional da **Yagna Cesario** - Expert em Manicure Russa e procedimentos de alto padrão.
 
-First, run the development server:
+## Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** - Framework React
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS v4** - Estilização
+- **Cypress** - Testes e2e
+
+## Estrutura
+
+```
+components/
+├── hero.tsx           # Hero com foto e card de apresentação
+├── sobre.tsx          # Seção "Quem é Yagna Cesario"
+├── cursos.tsx         # Carrossel de Cursos & Mentorias
+├── especialidades.tsx # Grid rotativo de especialidades
+├── servicos.tsx       # Procedimentos com modal
+├── contato.tsx        # Botões WhatsApp e Instagram
+├── footer.tsx         # Rodapé
+└── whatsapp-float.tsx # Botão flutuante WhatsApp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Layout mobile-first (430px)
+- Carrosséis com scroll-snap
+- Especialidades com rotação automática (4s)
+- Modal de procedimentos com botão "Agendar"
+- Links diretos para WhatsApp
+- Paleta: preto (#1A1A1A) + nude/blush (#E8D5CC, #D4A99A)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Rodando localmente
 
-## Learn More
+```bash
+# Instalar dependências
+bun install
 
-To learn more about Next.js, take a look at the following resources:
+# Rodar em desenvolvimento
+bun run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Build de produção
+bun run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Testes Cypress
+bun run cypress:open
+```
 
-## Deploy on Vercel
+## Acesso na rede local
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+bunx next dev --hostname 0.0.0.0 --port 3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acesse de outro dispositivo: `http://SEU-IP:3000`
+
+## Deploy
+
+O projeto pode ser deployado na [Vercel](https://vercel.com) com configuração zero.
+
+---
+
+Desenvolvido por **Maria Júlia**
