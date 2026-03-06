@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 
 const cursos = [
   {
@@ -19,7 +20,7 @@ const cursos = [
     tag: 'TÉCNICA',
     titulo: 'Soft Gel sem Lixamento',
     desc: 'Aprenda a técnica que preserva a unha natural com acabamento perfeito.',
-    imagem: '/images/cursos/curso-soft-gel.jpeg',
+    imagem: '/images/cursos/curso-soft-gel.png',
   }
 ]
 
@@ -82,57 +83,7 @@ export default function Cursos() {
       </div>
 
       {/* Carousel container */}
-      <div style={{ position: 'relative' }}>
-        {/* Left arrow */}
-        <button
-          onClick={scrollLeft}
-          style={{
-            position: 'absolute',
-            left: 8,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: 44,
-            height: 44,
-            borderRadius: '50%',
-            background: '#D4A99A',
-            border: 'none',
-            cursor: 'pointer',
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-
-        {/* Right arrow */}
-        <button
-          onClick={scrollRight}
-          style={{
-            position: 'absolute',
-            right: 8,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: 44,
-            height: 44,
-            borderRadius: '50%',
-            background: '#D4A99A',
-            border: 'none',
-            cursor: 'pointer',
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-
+      <div>
         {/* Carousel */}
         <div
           ref={carouselRef}
@@ -143,13 +94,13 @@ export default function Cursos() {
             scrollSnapType: 'x mandatory',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            padding: '0 60px',
+            padding: '0 20px',
           }}
         >
           {cursos.map((curso, i) => (
             <a
               key={i}
-              href="https://wa.me/5534999999999"
+              href="https://wa.me/5599844469660"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -168,14 +119,14 @@ export default function Cursos() {
                 style={{
                   height: 240,
                   overflow: 'hidden',
+                  position: 'relative',
                 }}
               >
-                <img
+                <Image
                   src={curso.imagem}
                   alt={curso.titulo}
+                  fill
                   style={{
-                    width: '100%',
-                    height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center top',
                   }}
@@ -228,6 +179,53 @@ export default function Cursos() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Navigation arrows */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 16,
+            marginTop: 28,
+          }}
+        >
+          <button
+            onClick={scrollLeft}
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              background: '#D4A99A',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            onClick={scrollRight}
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              background: '#D4A99A',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const badges = ['MANICURE RUSSA', 'PODAL RUSSO', 'LENS®', 'EDUCADORA']
 
 export default function Sobre() {
@@ -40,6 +42,25 @@ export default function Sobre() {
         <br />
         Menezzes
       </h2>
+
+      {/* Photo */}
+      <div
+        style={{
+          width: 280,
+          height: 280,
+          borderRadius: '50%',
+          overflow: 'hidden',
+          margin: '0 auto 32px',
+          position: 'relative',
+        }}
+      >
+        <Image
+          src="/images/yagna-sorriso.jpeg"
+          alt="Yagna Menezzes"
+          fill
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
 
       {/* Paragraphs */}
       <p

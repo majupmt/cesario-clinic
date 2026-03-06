@@ -1,22 +1,23 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import Image from 'next/image'
 
 const procedimentos = [
   {
     nome: 'Manicure Russa',
     desc: 'Técnica de alta precisão com instrumentos esterilizados, proporcionando cutículas perfeitamente limpas e acabamento impecável.',
-    imagem: '/images/procedimentos/manicure-modelo.jpeg',
+    imagem: '/images/procedimentos/yagna-tesouras.jpeg',
   },
   {
     nome: 'Podal Russo',
     desc: 'Procedimento especializado nos pés com técnica russa, garantindo saúde, conforto e estética podal de excelência.',
-    imagem: '/images/procedimentos/whatsapp-image-1.jpeg',
+    imagem: '/images/procedimentos/podal-russo.jpeg',
   },
   {
     nome: 'Blindagem de Cálcio',
     desc: 'Tratamento fortalecedor que cria camada protetora sobre a unha natural, prevenindo quebras e descamações.',
-    imagem: '/images/procedimentos/yagna-blindagem-calcio.jpeg',
+    imagem: '/images/procedimentos/blindagem.jpeg',
   },
   {
     nome: 'Banho de Gel Cesario',
@@ -43,6 +44,15 @@ const procedimentos = [
 export default function Servicos() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedProc, setSelectedProc] = useState<typeof procedimentos[0] | null>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  const scrollLeft = () => {
+    carouselRef.current?.scrollBy({ left: -220, behavior: 'smooth' })
+  }
+
+  const scrollRight = () => {
+    carouselRef.current?.scrollBy({ left: 220, behavior: 'smooth' })
+  }
 
   const openModal = (proc: typeof procedimentos[0]) => {
     setSelectedProc(proc)
@@ -88,8 +98,9 @@ export default function Servicos() {
           </h2>
         </div>
 
-        {/* Carousel (touch scroll, no arrows) */}
+        {/* Carousel */}
         <div
+          ref={carouselRef}
           style={{
             display: 'flex',
             gap: 12,
@@ -135,14 +146,11 @@ export default function Servicos() {
                   overflow: 'hidden',
                 }}
               >
-                <img
+                <Image
                   src={proc.imagem}
                   alt={proc.nome}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
+                  fill
+                  style={{ objectFit: 'cover' }}
                 />
                 {/* Dark overlay at bottom with name */}
                 <div
@@ -169,6 +177,53 @@ export default function Servicos() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Navigation arrows */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 16,
+            marginTop: 24,
+          }}
+        >
+          <button
+            onClick={scrollLeft}
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              background: '#1A1A1A',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            onClick={scrollRight}
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              background: '#1A1A1A',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
       </section>
 
@@ -228,16 +283,14 @@ export default function Servicos() {
               style={{
                 height: 200,
                 overflow: 'hidden',
+                position: 'relative',
               }}
             >
-              <img
+              <Image
                 src={selectedProc.imagem}
                 alt={selectedProc.nome}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
+                fill
+                style={{ objectFit: 'cover' }}
               />
             </div>
 
@@ -268,7 +321,7 @@ export default function Servicos() {
 
               {/* WhatsApp button */}
               <a
-                href="https://wa.me/5534999999999"
+                href="https://wa.me/5599844469660"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

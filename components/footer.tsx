@@ -31,7 +31,7 @@ export default function Footer() {
           fontFamily: 'Georgia, serif',
         }}
       >
-        © 2025 Cesário Clinic · Todos os direitos reservados
+        © 2026 Cesário Clinic · Todos os direitos reservados
       </p>
 
       {/* Developer credit */}

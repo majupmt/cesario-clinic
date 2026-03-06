@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function Hero() {
   return (
     <section
@@ -23,16 +25,15 @@ export default function Hero() {
           height: 340,
           borderRadius: '8px 8px 0 0',
           overflow: 'hidden',
+          position: 'relative',
         }}
       >
-        <img
-          src="/images/hero-yagna.jpeg"
+        <Image
+          src="/images/yagna-pose.jpeg"
           alt="Yagna Cesario"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
         />
       </div>
 

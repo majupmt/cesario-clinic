@@ -1,48 +1,64 @@
 #!/bin/bash
 
-# ═══════════════════════════════════════
-# Cesário Clinic - Scripts Úteis
-# ═══════════════════════════════════════
+# ═══════════════════════════════════════════════════
+#   CESÁRIO CLINIC
+# ═══════════════════════════════════════════════════
+
+LINE="───────────────────────────────────────────────"
+
+header() {
+  clear
+  echo ""
+  echo "  ╔═══════════════════════════════════════╗"
+  echo "  ║         CESÁRIO CLINIC                ║"
+  echo "  ╚═══════════════════════════════════════╝"
+  echo ""
+}
+
+info()    { echo "  ▸ $1"; }
+success() { echo "  ✔  $1"; }
+label()   { echo "  $LINE"; echo "  $1"; echo "  $LINE"; }
 
 case "$1" in
   dev)
-    # Limpa terminal e inicia Next.js
-    clear
-    echo "🚀 Iniciando Cesário Clinic..."
-    echo "═══════════════════════════════"
-    cd ~/cesario-clinic && npm run dev
+    header
+    label "DEV SERVER"
+    info  "Iniciando Next.js em http://localhost:3000"
+    echo ""
+    cd ~/cesario-clinic && bun run dev
     ;;
 
   test)
-    # Limpa terminal e abre Cypress GUI
-    clear
-    echo "🧪 Abrindo Cypress..."
-    echo "═══════════════════════════════"
-    cd ~/cesario-clinic && npx cypress open
+    header
+    label "CYPRESS — MODO VISUAL"
+    info  "Abrindo Cypress GUI..."
+    echo ""
+    cd ~/cesario-clinic && bunx cypress open
     ;;
 
   test:run)
-    # Limpa terminal e roda testes headless (terminal)
-    clear
-    echo "🧪 Rodando testes headless..."
-    echo "═══════════════════════════════"
-    cd ~/cesario-clinic && npx cypress run --spec "cypress/e2e/home.cy.ts" 2>&1 | grep -E "(✓|✗|passing|failing|✅|⚠️|❌|Spec|Tests|Duration)"
+    header
+    label "CYPRESS — HEADLESS"
+    info  "Rodando cypress/e2e/home.cy.ts"
+    echo ""
+    cd ~/cesario-clinic && bunx cypress run --spec "cypress/e2e/home.cy.ts" 2>&1 \
+      | grep -E "(passing|failing|pending|✓|✗|×|Spec|Tests|Duration|  [0-9]+\))"
+    echo ""
     ;;
 
   clean)
-    # Limpa terminal
-    clear
-    echo "🧹 Terminal limpo!"
-    echo "═══════════════════════════════"
-    echo "Comandos disponíveis:"
-    echo "  ./run.sh dev       → Inicia o projeto"
-    echo "  ./run.sh test      → Abre Cypress GUI"
-    echo "  ./run.sh test:run  → Roda testes no terminal (limpo)"
-    echo "  ./run.sh clean     → Limpa terminal"
-    echo "═══════════════════════════════"
+    header
+    label "COMANDOS DISPONÍVEIS"
+    info  "./run.sh dev        → Inicia o servidor de desenvolvimento"
+    info  "./run.sh test       → Abre Cypress GUI"
+    info  "./run.sh test:run   → Roda testes headless no terminal"
+    info  "./run.sh clean      → Exibe esta tela"
+    echo ""
     ;;
 
   *)
-    echo "Uso: ./run.sh {dev|test|test:run|clean}"
+    echo ""
+    echo "  Uso: ./run.sh {dev|test|test:run|clean}"
+    echo ""
     ;;
 esac

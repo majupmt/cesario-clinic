@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const pares = [
   {
     items: ['Podal Russo', 'Manicure Russa'],
     imagens: [
-      '/images/especialidades/podal-russo-demo-melhor.jpeg',
-      '/images/especialidades/ela-e-podal-russo.jpeg',
+      '/images/especialidades/podal-russo.jpeg',
+      '/images/especialidades/manicure-russa.png',
     ],
   },
   {
@@ -45,6 +46,9 @@ export default function Especialidades() {
   }, [])
 
   const parAtual = pares[activeIndex]
+
+  const prev = () => setActiveIndex((p) => (p - 1 + pares.length) % pares.length)
+  const next = () => setActiveIndex((p) => (p + 1) % pares.length)
 
   return (
     <section
@@ -115,14 +119,11 @@ export default function Especialidades() {
                 position: 'relative',
               }}
             >
-              <img
+              <Image
                 src={parAtual.imagens[i]}
                 alt={item}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
+                fill
+                style={{ objectFit: 'cover' }}
               />
               {/* Dark overlay at bottom with name */}
               <div
@@ -151,30 +152,71 @@ export default function Especialidades() {
         ))}
       </div>
 
-      {/* Dots indicators */}
+      {/* Navigation: arrows + dots */}
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: 8,
+          alignItems: 'center',
+          gap: 16,
           marginTop: 24,
         }}
       >
-        {pares.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIndex(i)}
-            style={{
-              width: activeIndex === i ? 24 : 8,
-              height: 8,
-              borderRadius: 4,
-              background: activeIndex === i ? '#1A1A1A' : 'rgba(26,26,26,0.2)',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-            }}
-          />
-        ))}
+        <button
+          onClick={prev}
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: '50%',
+            background: '#1A1A1A',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <div style={{ display: 'flex', gap: 8 }}>
+          {pares.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              style={{
+                width: activeIndex === i ? 24 : 8,
+                height: 8,
+                borderRadius: 4,
+                background: activeIndex === i ? '#1A1A1A' : 'rgba(26,26,26,0.2)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={next}
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: '50%',
+            background: '#1A1A1A',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </section>
   )

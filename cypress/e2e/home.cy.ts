@@ -28,7 +28,7 @@ describe('🏠 Cesário Clinic - Home Page', () => {
     })
 
     it('deve ter imagem real de Yagna', () => {
-      cy.get('#home img').should('have.attr', 'src', '/images/hero-yagna.jpeg')
+      cy.get('#home img').should('have.attr', 'src', '/images/yagna-pose.jpeg')
       cy.log('✅ Imagem hero presente')
     })
   })
@@ -50,7 +50,7 @@ describe('🏠 Cesário Clinic - Home Page', () => {
     })
 
     it('deve exibir todas as badges de especialidade', () => {
-      const badges = ['Manicure Russa', 'Podal Russo', 'LENS®', 'Educadora']
+      const badges = ['MANICURE RUSSA', 'PODAL RUSSO', 'LENS®', 'EDUCADORA']
 
       badges.forEach((badge) => {
         cy.contains(badge).scrollIntoView().should('be.visible')
@@ -137,13 +137,15 @@ describe('🏠 Cesário Clinic - Home Page', () => {
       cy.log('✅ Especialidades com imagens reais')
     })
 
-    it('deve ter indicadores de navegação (dots)', () => {
-      cy.get('#especialidades button').should('have.length', 4)
-      cy.log('✅ 4 indicadores de navegação presentes')
+    it('deve ter indicadores de navegação (dots + setas)', () => {
+      // 2 setas (prev/next) + 4 dots = 6 botões
+      cy.get('#especialidades button').should('have.length', 6)
+      cy.log('✅ 6 botões de navegação presentes (2 setas + 4 dots)')
     })
 
     it('deve trocar de par ao clicar nos dots', () => {
-      cy.get('#especialidades button').eq(1).click()
+      // dots são os botões de índice 1 a 4 (0=prev, 5=next)
+      cy.get('#especialidades button').eq(2).click()
       cy.wait(500)
       cy.log('✅ Navegação por dots funciona')
     })
