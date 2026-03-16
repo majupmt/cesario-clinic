@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Cesário Clinic | Manicure Russa e Podal Russo",
   description: "Expert em Manicure Russa e Podal Russo. Alto padrão em tratamentos de unhas e terapia podal.",
+  icons: { icon: '/favicon.svg' },
 };
 
 export default function RootLayout({
