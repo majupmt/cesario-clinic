@@ -37,7 +37,6 @@ const pares = [
 export default function Especialidades() {
   const [activeIndex, setActiveIndex] = useState(0)
 
-  // Auto-rotation every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % pares.length)
@@ -46,7 +45,6 @@ export default function Especialidades() {
   }, [])
 
   const parAtual = pares[activeIndex]
-
   const prev = () => setActiveIndex((p) => (p - 1 + pares.length) % pares.length)
   const next = () => setActiveIndex((p) => (p + 1) % pares.length)
 
@@ -54,19 +52,19 @@ export default function Especialidades() {
     <section
       id="especialidades"
       style={{
-        background: '#EACDC3',
-        padding: '64px 20px',
+        background: '#111111',
+        padding: '64px 24px',
       }}
     >
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: 32 }}>
+      <div style={{ textAlign: 'center', marginBottom: 48 }}>
         <p
           style={{
             fontSize: '0.6rem',
-            letterSpacing: '0.35em',
-            color: '#C4948A',
-            marginBottom: 12,
-            fontFamily: 'Georgia, serif',
+            letterSpacing: '0.3em',
+            color: 'rgba(255,255,255,0.4)',
+            marginBottom: 16,
+            fontFamily: "'Inter', sans-serif",
           }}
         >
           NOSSOS SERVIÇOS
@@ -74,10 +72,10 @@ export default function Especialidades() {
         <h2
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: '2rem',
+            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
             fontWeight: 700,
-            color: '#1A1A1A',
-            letterSpacing: '0.05em',
+            color: '#ffffff',
+            letterSpacing: '0.06em',
             textTransform: 'uppercase',
           }}
         >
@@ -86,137 +84,141 @@ export default function Especialidades() {
       </div>
 
       {/* Grid 2 columns */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 12,
-          maxWidth: 400,
-          margin: '0 auto',
-        }}
-      >
-        {parAtual.items.map((item, i) => (
-          <div key={i} style={{ textAlign: 'center' }}>
-            {/* Title above card */}
-            <p
-              style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '0.75rem',
-                color: '#1A1A1A',
-                marginBottom: 8,
-                fontWeight: 600,
-              }}
-            >
-              {item}
-            </p>
-
-            {/* Card with image */}
-            <div
-              style={{
-                height: 200,
-                borderRadius: 16,
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
-              <Image
-                src={parAtual.imagens[i]}
-                alt={item}
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-              {/* Dark overlay at bottom with name */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  padding: '20px 12px',
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
-                }}
-              >
-                <p
-                  style={{
-                    color: 'white',
-                    fontSize: '0.75rem',
-                    fontFamily: 'Georgia, serif',
-                    textAlign: 'center',
-                  }}
-                >
-                  {item}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Navigation: arrows + dots */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 16,
-          marginTop: 24,
-        }}
-      >
-        <button
-          onClick={prev}
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        <div
+          className="md:grid-cols-4"
           style={{
-            width: 40,
-            height: 40,
-            borderRadius: '50%',
-            background: '#1A1A1A',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 12,
           }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
+          {parAtual.items.map((item, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              {/* Title above card */}
+              <p
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: '0.78rem',
+                  color: '#ffffff',
+                  marginBottom: 10,
+                  fontWeight: 500,
+                }}
+              >
+                {item}
+              </p>
 
-        <div style={{ display: 'flex', gap: 8 }}>
-          {pares.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              style={{
-                width: activeIndex === i ? 24 : 8,
-                height: 8,
-                borderRadius: 4,
-                background: activeIndex === i ? '#1A1A1A' : 'rgba(26,26,26,0.2)',
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-              }}
-            />
+              {/* Card */}
+              <div
+                style={{
+                  height: 240,
+                  borderRadius: 12,
+                  overflow: 'hidden',
+                  position: 'relative',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: '#141414',
+                }}
+              >
+                <Image
+                  src={parAtual.imagens[i]}
+                  alt={item}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '24px 12px',
+                    background: 'linear-gradient(to top, rgba(10,10,10,0.8), transparent)',
+                  }}
+                >
+                  <p
+                    style={{
+                      color: '#ffffff',
+                      fontSize: '0.65rem',
+                      fontFamily: "'Inter', sans-serif",
+                      textAlign: 'center',
+                      letterSpacing: '0.12em',
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        <button
-          onClick={next}
+        {/* Navigation: arrows + dots */}
+        <div
           style={{
-            width: 40,
-            height: 40,
-            borderRadius: '50%',
-            background: '#1A1A1A',
-            border: 'none',
-            cursor: 'pointer',
             display: 'flex',
-            alignItems: 'center',
             justifyContent: 'center',
+            alignItems: 'center',
+            gap: 16,
+            marginTop: 32,
           }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
+          <button
+            onClick={prev}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div style={{ display: 'flex', gap: 8 }}>
+            {pares.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                style={{
+                  width: activeIndex === i ? 24 : 8,
+                  height: 8,
+                  borderRadius: 4,
+                  background: activeIndex === i ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.2)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   )

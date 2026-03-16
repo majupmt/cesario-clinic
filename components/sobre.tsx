@@ -9,111 +9,136 @@ export default function Sobre() {
     <section
       id="sobre"
       style={{
-        background: '#FBF3EE',
-        padding: '64px 24px',
-        textAlign: 'center',
+        background: '#0a0a0a',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}
     >
-      {/* Label */}
-      <p
-        style={{
-          fontSize: '0.6rem',
-          letterSpacing: '0.35em',
-          color: '#C4948A',
-          marginBottom: 16,
-          fontFamily: 'Georgia, serif',
-        }}
-      >
-        CONHEÇA
-      </p>
-
-      {/* Heading */}
-      <h2
-        style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: '2rem',
-          fontWeight: 700,
-          color: '#1A1A1A',
-          marginBottom: 24,
-          lineHeight: 1.2,
-        }}
-      >
-        Quem é Yagna
-        <br />
-        Menezzes
-      </h2>
-
-      {/* Photo */}
+      {/* Inner container */}
       <div
         style={{
-          width: 280,
-          height: 280,
-          borderRadius: '50%',
+          background: '#F8F6F3',
+          borderRadius: 16,
           overflow: 'hidden',
-          margin: '0 auto 32px',
-          position: 'relative',
-        }}
-      >
-        <Image
-          src="/images/yagna-sorriso.jpeg"
-          alt="Yagna Menezzes"
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
-
-      {/* Paragraphs */}
-      <p
-        style={{
-          fontSize: '0.95rem',
-          color: 'rgba(26,26,26,0.55)',
-          lineHeight: 1.85,
-          marginBottom: 20,
-          fontFamily: 'Georgia, serif',
-        }}
-      >
-        Empreendedora, educadora e especialista em tratamentos de unhas e terapia podal,
-        reconhecida por sua atuação técnica de alto padrão e por sua missão de transformar
-        a vida de mulheres através da profissão.
-      </p>
-      <p
-        style={{
-          fontSize: '0.95rem',
-          color: 'rgba(26,26,26,0.55)',
-          lineHeight: 1.85,
-          marginBottom: 32,
-          fontFamily: 'Georgia, serif',
-        }}
-      >
-        Referência em procedimentos que priorizam saúde, naturalidade e resultado duradouro,
-        sempre respeitando a individualidade de cada cliente e profissional.
-      </p>
-
-      {/* Badges */}
-      <div
-        style={{
+          padding: '40px 24px',
+          margin: 24,
+          width: 'calc(100% - 48px)',
           display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: 10,
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
         }}
       >
-        {badges.map((badge) => (
-          <span
-            key={badge}
-            style={{
-              background: 'rgba(212,169,154,0.2)',
-              padding: '10px 18px',
-              borderRadius: 100,
-              fontSize: '0.65rem',
-              letterSpacing: '0.12em',
-              color: '#1A1A1A',
-              fontFamily: 'Georgia, serif',
-            }}
-          >
-            {badge}
-          </span>
-        ))}
+        {/* Label */}
+        <p
+          style={{
+            fontSize: '0.6rem',
+            letterSpacing: '0.45em',
+            color: 'rgba(26,26,26,0.4)',
+            marginBottom: 16,
+            fontFamily: "'Inter', sans-serif",
+          }}
+        >
+          CONHEÇA
+        </p>
+
+        {/* Título */}
+        <h2
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+            fontWeight: 400,
+            color: '#1a1a1a',
+            marginBottom: 32,
+            lineHeight: 1.15,
+          }}
+        >
+          Quem é
+          <br />
+          <em>Yagna Menezzes</em>
+        </h2>
+
+        {/* Foto */}
+        <div
+          style={{
+            width: 280,
+            height: 280,
+            borderRadius: '50%',
+            overflow: 'hidden',
+            position: 'relative',
+            border: '1px solid rgba(26,26,26,0.1)',
+            margin: '0 auto 32px',
+            flexShrink: 0,
+          }}
+        >
+          <Image
+            src="/images/yagna-sorriso.jpeg"
+            alt="Yagna Menezzes"
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+
+        {/* Parágrafos */}
+        <p
+          style={{
+            fontSize: '0.95rem',
+            color: 'rgba(26,26,26,0.6)',
+            lineHeight: 1.95,
+            marginBottom: 20,
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 300,
+            maxWidth: 380,
+          }}
+        >
+          Empreendedora, educadora e especialista em tratamentos de unhas e terapia podal,
+          reconhecida por sua atuação técnica de alto padrão e por sua missão de transformar
+          a vida de mulheres através da profissão.
+        </p>
+        <p
+          style={{
+            fontSize: '0.95rem',
+            color: 'rgba(26,26,26,0.6)',
+            lineHeight: 1.95,
+            marginBottom: 40,
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 300,
+            maxWidth: 380,
+          }}
+        >
+          Referência em procedimentos que priorizam saúde, naturalidade e resultado duradouro,
+          sempre respeitando a individualidade de cada cliente e profissional.
+        </p>
+
+        {/* Badges */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 10,
+          }}
+        >
+          {badges.map((badge) => (
+            <span
+              key={badge}
+              style={{
+                border: '1px solid rgba(26,26,26,0.2)',
+                padding: '8px 18px',
+                borderRadius: 100,
+                fontSize: '0.6rem',
+                letterSpacing: '0.15em',
+                color: '#1a1a1a',
+                fontFamily: "'Inter', sans-serif",
+                background: 'transparent',
+              }}
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   )

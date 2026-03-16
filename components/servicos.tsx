@@ -69,19 +69,19 @@ export default function Servicos() {
       <section
         id="procedimentos"
         style={{
-          background: '#FAF5F2',
+          background: '#0a0a0a',
           padding: '64px 0',
         }}
       >
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 24px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 40px' }}>
           <p
             style={{
               fontSize: '0.6rem',
-              letterSpacing: '0.35em',
-              color: '#C4948A',
-              marginBottom: 12,
-              fontFamily: 'Georgia, serif',
+              letterSpacing: '0.45em',
+              color: 'rgba(255,255,255,0.35)',
+              marginBottom: 16,
+              fontFamily: "'Inter', sans-serif",
             }}
           >
             TRATAMENTOS
@@ -89,9 +89,10 @@ export default function Servicos() {
           <h2
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '2rem',
-              fontWeight: 700,
-              color: '#1A1A1A',
+              fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              color: '#ffffff',
             }}
           >
             Procedimentos
@@ -103,12 +104,12 @@ export default function Servicos() {
           ref={carouselRef}
           style={{
             display: 'flex',
-            gap: 12,
+            gap: 14,
             overflowX: 'auto',
             scrollSnapType: 'x mandatory',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            padding: '0 20px',
+            padding: '0 40px',
           }}
         >
           {procedimentos.map((proc, i) => (
@@ -118,7 +119,7 @@ export default function Servicos() {
               style={{
                 flexShrink: 0,
                 width: '46%',
-                maxWidth: 180,
+                maxWidth: 200,
                 scrollSnapAlign: 'start',
                 cursor: 'pointer',
                 textAlign: 'center',
@@ -128,10 +129,10 @@ export default function Servicos() {
               <p
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '0.8rem',
-                  color: '#1A1A1A',
-                  marginBottom: 8,
-                  fontWeight: 600,
+                  fontSize: '0.78rem',
+                  color: '#ffffff',
+                  marginBottom: 10,
+                  fontWeight: 500,
                 }}
               >
                 {proc.nome}
@@ -141,9 +142,11 @@ export default function Servicos() {
               <div
                 style={{
                   height: 280,
-                  borderRadius: 16,
+                  borderRadius: 12,
                   position: 'relative',
                   overflow: 'hidden',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: '#141414',
                 }}
               >
                 <Image
@@ -152,23 +155,23 @@ export default function Servicos() {
                   fill
                   style={{ objectFit: 'cover' }}
                 />
-                {/* Dark overlay at bottom with name */}
                 <div
                   style={{
                     position: 'absolute',
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    padding: '24px 12px',
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
+                    padding: '28px 12px',
+                    background: 'linear-gradient(transparent, rgba(10,10,10,0.8))',
                   }}
                 >
                   <p
                     style={{
-                      color: 'white',
-                      fontSize: '0.75rem',
-                      fontFamily: 'Georgia, serif',
+                      color: '#ffffff',
+                      fontSize: '0.65rem',
+                      fontFamily: "'Inter', sans-serif",
                       textAlign: 'center',
+                      letterSpacing: '0.08em',
                     }}
                   >
                     {proc.nome}
@@ -185,45 +188,63 @@ export default function Servicos() {
             display: 'flex',
             justifyContent: 'center',
             gap: 16,
-            marginTop: 24,
+            marginTop: 32,
           }}
         >
           <button
             onClick={scrollLeft}
             style={{
-              width: 44,
-              height: 44,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
-              background: '#1A1A1A',
-              border: 'none',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
           <button
             onClick={scrollRight}
             style={{
-              width: 44,
-              height: 44,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
-              background: '#1A1A1A',
-              border: 'none',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8D5CC" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
+        </div>
+
+        {/* Badge */}
+        <div style={{ textAlign: 'center', marginTop: 24, marginBottom: 8 }}>
+          <span
+            style={{
+              display: 'inline-block',
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 100,
+              padding: '10px 24px',
+              fontSize: '0.7rem',
+              letterSpacing: '0.12em',
+              color: 'rgba(255,255,255,0.5)',
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            Clique no procedimento e agende!
+          </span>
         </div>
       </section>
 
@@ -233,21 +254,22 @@ export default function Servicos() {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.7)',
-            backdropFilter: 'blur(4px)',
+            background: 'rgba(10,10,10,0.75)',
+            backdropFilter: 'blur(6px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 100,
-            padding: 20,
+            padding: 24,
           }}
           onClick={closeModal}
         >
           <div
             style={{
-              background: 'white',
-              borderRadius: 20,
-              maxWidth: 380,
+              background: '#ffffff',
+              borderRadius: 4,
+              border: '1px solid #e0e0e0',
+              maxWidth: 400,
               width: '100%',
               overflow: 'hidden',
               position: 'relative',
@@ -264,7 +286,7 @@ export default function Servicos() {
                 width: 32,
                 height: 32,
                 borderRadius: '50%',
-                background: 'rgba(0,0,0,0.1)',
+                background: 'rgba(10,10,10,0.08)',
                 border: 'none',
                 cursor: 'pointer',
                 display: 'flex',
@@ -273,19 +295,13 @@ export default function Servicos() {
                 zIndex: 10,
               }}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
 
             {/* Image */}
-            <div
-              style={{
-                height: 200,
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
+            <div style={{ height: 220, overflow: 'hidden', position: 'relative' }}>
               <Image
                 src={selectedProc.imagem}
                 alt={selectedProc.nome}
@@ -295,14 +311,14 @@ export default function Servicos() {
             </div>
 
             {/* Content */}
-            <div style={{ padding: 24 }}>
+            <div style={{ padding: '28px 28px 32px' }}>
               <h3
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '1.3rem',
+                  fontSize: '1.35rem',
                   fontWeight: 700,
-                  color: '#1A1A1A',
-                  marginBottom: 12,
+                  color: '#0a0a0a',
+                  marginBottom: 14,
                 }}
               >
                 {selectedProc.nome}
@@ -310,10 +326,11 @@ export default function Servicos() {
               <p
                 style={{
                   fontSize: '0.85rem',
-                  color: 'rgba(26,26,26,0.6)',
-                  lineHeight: 1.7,
-                  marginBottom: 24,
-                  fontFamily: 'Georgia, serif',
+                  color: '#666',
+                  lineHeight: 1.75,
+                  marginBottom: 28,
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 300,
                 }}
               >
                 {selectedProc.desc}
@@ -321,22 +338,22 @@ export default function Servicos() {
 
               {/* WhatsApp button */}
               <a
-                href="https://wa.me/5599844469660"
+                href="https://wa.me/559984446966"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   display: 'block',
                   width: '100%',
-                  padding: '16px 24px',
-                  background: '#25D366',
-                  color: 'white',
+                  padding: '14px 32px',
+                  background: '#ffffff',
+                  color: '#0a0a0a',
                   textAlign: 'center',
-                  borderRadius: 100,
+                  borderRadius: 4,
                   textDecoration: 'none',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  fontFamily: 'Georgia, serif',
+                  fontSize: '0.75rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.15em',
+                  fontFamily: "'Inter', sans-serif",
                 }}
               >
                 AGENDAR

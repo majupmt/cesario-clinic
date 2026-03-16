@@ -21,41 +21,37 @@ const cursos = [
     titulo: 'Soft Gel sem Lixamento',
     desc: 'Aprenda a técnica que preserva a unha natural com acabamento perfeito.',
     imagem: '/images/cursos/curso-soft-gel.png',
-  }
+  },
 ]
 
 export default function Cursos() {
   const carouselRef = useRef<HTMLDivElement>(null)
 
   const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' })
-    }
+    carouselRef.current?.scrollBy({ left: -300, behavior: 'smooth' })
   }
 
   const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' })
-    }
+    carouselRef.current?.scrollBy({ left: 300, behavior: 'smooth' })
   }
 
   return (
     <section
       id="cursos"
       style={{
-        background: '#1A1A1A',
+        background: '#0a0a0a',
         padding: '64px 0',
       }}
     >
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 24px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 40px' }}>
         <p
           style={{
             fontSize: '0.6rem',
-            letterSpacing: '0.35em',
-            color: '#C4948A',
-            marginBottom: 12,
-            fontFamily: 'Georgia, serif',
+            letterSpacing: '0.3em',
+            color: 'rgba(255,255,255,0.4)',
+            marginBottom: 16,
+            fontFamily: "'Inter', sans-serif",
           }}
         >
           FORMAÇÃO
@@ -63,11 +59,11 @@ export default function Cursos() {
         <h2
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: '1.9rem',
+            fontSize: 'clamp(1.9rem, 4vw, 2.8rem)',
             fontStyle: 'italic',
             fontWeight: 400,
-            color: '#E8D5CC',
-            marginBottom: 16,
+            color: '#ffffff',
+            marginBottom: 20,
           }}
         >
           Cursos & Mentorias
@@ -76,15 +72,14 @@ export default function Cursos() {
           style={{
             width: 40,
             height: 1,
-            background: '#C4948A',
+            background: 'rgba(255,255,255,0.15)',
             margin: '0 auto',
           }}
         />
       </div>
 
-      {/* Carousel container */}
+      {/* Carousel */}
       <div>
-        {/* Carousel */}
         <div
           ref={carouselRef}
           style={{
@@ -94,21 +89,22 @@ export default function Cursos() {
             scrollSnapType: 'x mandatory',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            padding: '0 20px',
+            padding: '0 24px',
           }}
         >
           {cursos.map((curso, i) => (
             <a
               key={i}
-              href="https://wa.me/5599844469660"
+              href="https://wa.me/559984446966"
               target="_blank"
               rel="noopener noreferrer"
               style={{
                 flexShrink: 0,
                 width: '82%',
-                maxWidth: 320,
-                background: '#252525',
-                borderRadius: 20,
+                maxWidth: 340,
+                background: '#141414',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: 12,
                 overflow: 'hidden',
                 scrollSnapAlign: 'start',
                 textDecoration: 'none',
@@ -117,7 +113,7 @@ export default function Cursos() {
               {/* Image */}
               <div
                 style={{
-                  height: 240,
+                  height: 260,
                   overflow: 'hidden',
                   position: 'relative',
                 }}
@@ -134,32 +130,29 @@ export default function Cursos() {
               </div>
 
               {/* Content */}
-              <div style={{ padding: 20 }}>
+              <div style={{ padding: '20px 24px 28px' }}>
                 {/* Tag */}
-                <span
+                <p
                   style={{
-                    display: 'inline-block',
-                    background: 'rgba(212,169,154,0.2)',
-                    padding: '6px 12px',
-                    borderRadius: 100,
                     fontSize: '0.6rem',
-                    letterSpacing: '0.1em',
-                    color: '#D4A99A',
+                    letterSpacing: '0.3em',
+                    color: 'rgba(255,255,255,0.4)',
                     marginBottom: 12,
-                    fontFamily: 'Georgia, serif',
+                    fontFamily: "'Inter', sans-serif",
                   }}
                 >
                   {curso.tag}
-                </span>
+                </p>
 
                 {/* Title */}
                 <h3
                   style={{
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: '1.2rem',
+                    fontSize: '1.15rem',
                     fontWeight: 700,
-                    color: '#E8D5CC',
-                    marginBottom: 8,
+                    color: '#ffffff',
+                    marginBottom: 10,
+                    lineHeight: 1.3,
                   }}
                 >
                   {curso.titulo}
@@ -169,9 +162,10 @@ export default function Cursos() {
                 <p
                   style={{
                     fontSize: '0.8rem',
-                    color: 'rgba(232,213,204,0.5)',
-                    lineHeight: 1.6,
-                    fontFamily: 'Georgia, serif',
+                    color: 'rgba(255,255,255,0.5)',
+                    lineHeight: 1.7,
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 300,
                   }}
                 >
                   {curso.desc}
@@ -187,42 +181,42 @@ export default function Cursos() {
             display: 'flex',
             justifyContent: 'center',
             gap: 16,
-            marginTop: 28,
+            marginTop: 32,
           }}
         >
           <button
             onClick={scrollLeft}
             style={{
-              width: 44,
-              height: 44,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
-              background: '#D4A99A',
-              border: 'none',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
           <button
             onClick={scrollRight}
             style={{
-              width: 44,
-              height: 44,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
-              background: '#D4A99A',
-              border: 'none',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.2)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
