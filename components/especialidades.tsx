@@ -9,6 +9,7 @@ const pares = [
     imagens: [
       '/images/especialidades/podal-russo.jpeg',
       '/images/especialidades/manicure-russa.png',
+      '/images/especialidades/cutilagem-pe.png',
     ],
   },
   {
@@ -16,6 +17,7 @@ const pares = [
     imagens: [
       '/images/especialidades/podal-russo-oleos.jpeg',
       '/images/especialidades/yagna-podal.jpeg',
+      '/images/especialidades/cutilagem-mao.png',
     ],
   },
   {
@@ -23,6 +25,8 @@ const pares = [
     imagens: [
       '/images/especialidades/podal-equipamentos.jpeg',
       '/images/procedimentos/alongamento-soft-gel.jpeg',
+      '/images/procedimentos/banho-de-gel.jpeg',
+      '/images/especialidades/blindagem.jpeg',
     ],
   },
   {
