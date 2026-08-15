@@ -1,4 +1,29 @@
-<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
-  <rect width='100' height='100' fill='#0D0D0D' rx='18'/>
-  <text x='50' y='72' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='72' font-weight='400' font-style='italic' fill='#C8C8C4'>C</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  
+  <circle cx="64" cy="64" r="60" stroke="#0a0a0a" stroke-width="0.6" fill="none" opacity="0.5"></circle>
+  
+  <circle cx="64" cy="64" r="56" stroke="#0a0a0a" stroke-width="1.1" fill="none"></circle>
+  
+  <circle cx="64" cy="64" r="52" stroke="#0a0a0a" stroke-width="0.4" fill="none" opacity="0.35"></circle>
+
+  
+  <text x="64" y="58" text-anchor="middle" dominant-baseline="central" font-family="Playfair Display, Georgia, serif" font-weight="400" font-size="54" fill="#0a0a0a">C</text>
+
+  
+  <text x="64" y="14" text-anchor="middle" dominant-baseline="central" font-family="Playfair Display, Georgia, serif" font-size="7" fill="#0a0a0a" opacity="0.85">✦</text>
+
+  
+  <defs>
+    <path id="cc-bottom-arc" d="M 20 64 A 44 44 0 0 0 108 64"></path>
+  </defs>
+  <text font-family="Inter, Helvetica, Arial, sans-serif" font-size="5.2" letter-spacing="3.4" fill="#0a0a0a" opacity="0.7">
+    <textPath href="#cc-bottom-arc" startOffset="50%" text-anchor="middle">CESARIO · CLINIC</textPath>
+  </text>
+
+  
+  <circle cx="4" cy="64" r="0.9" fill="#0a0a0a" opacity="0.55"></circle>
+  <circle cx="124" cy="64" r="0.9" fill="#0a0a0a" opacity="0.55"></circle>
+  
+  <line x1="8" y1="64" x2="14" y2="64" stroke="#0a0a0a" stroke-width="0.5" opacity="0.5"></line>
+  <line x1="114" y1="64" x2="120" y2="64" stroke="#0a0a0a" stroke-width="0.5" opacity="0.5"></line>
 </svg>
