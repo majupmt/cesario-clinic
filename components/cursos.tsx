@@ -13,9 +13,16 @@ const cursos = [
   },
   {
     tag: 'PRESENCIAL',
-    titulo: 'Manicure Clássica + Terapia Podal',
-    desc: 'Domine as técnicas tradicionais com base sólida e profissional.',
+    titulo: 'Manicure 4 em 1',
+    desc: 'Método russo + tratamento para unhas naturais',
     imagem: '/images/cursos/presencial-manicure-4em1.jpeg',
+  },
+  {
+    tag: 'PRESENCIAL',
+    titulo: 'Pedicure Premium',
+    desc: 'Diagnóstico da pele, reconstrução de borda livre e nail art moderna nos pés.',
+    // placeholder até o flyer oficial (presencial-pedicure-premium.jpeg) ser enviado para public/images/cursos
+    imagem: '/images/procedimentos/podal-russo.jpeg',
   },
   {
     tag: 'TÉCNICA',
