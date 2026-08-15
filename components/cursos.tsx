@@ -98,6 +98,7 @@ export default function Cursos() {
               href="https://wa.me/559984446966"
               target="_blank"
               rel="noopener noreferrer"
+              className="group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.45)] active:scale-[0.98]"
               style={{
                 flexShrink: 0,
                 width: '82%',
@@ -122,6 +123,7 @@ export default function Cursos() {
                   src={curso.imagem}
                   alt={curso.titulo}
                   fill
+                  className="transition-transform duration-500 ease-out group-hover:scale-105"
                   style={{
                     objectFit: 'cover',
                     objectPosition: 'center top',
@@ -186,6 +188,8 @@ export default function Cursos() {
         >
           <button
             onClick={scrollLeft}
+            aria-label="Curso anterior"
+            className="transition-transform duration-200 hover:scale-110 active:scale-90"
             style={{
               width: 40,
               height: 40,
@@ -204,6 +208,8 @@ export default function Cursos() {
           </button>
           <button
             onClick={scrollRight}
+            aria-label="Próximo curso"
+            className="transition-transform duration-200 hover:scale-110 active:scale-90"
             style={{
               width: 40,
               height: 40,
