@@ -13,8 +13,8 @@ const cursos = [
   },
   {
     tag: 'PRESENCIAL',
-    titulo: 'Manicure Clássica + Terapia Podal',
-    desc: 'Domine as técnicas tradicionais com base sólida e profissional.',
+    titulo: 'Manicure 4 em 1',
+    desc: 'Método russo + tratamento para unhas naturais',
     imagem: '/images/cursos/presencial-manicure-4em1.jpeg',
   },
   {
