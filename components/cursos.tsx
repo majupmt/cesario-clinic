@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import { whatsappLink } from '@/lib/whatsapp'
 
 const cursos = [
   {
@@ -103,7 +104,7 @@ export default function Cursos() {
           {cursos.map((curso, i) => (
             <a
               key={i}
-              href="https://wa.me/559984446966"
+              href={whatsappLink(`Olá, tenho interesse no curso ${curso.titulo}`)}
               target="_blank"
               rel="noopener noreferrer"
               className="group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.45)] active:scale-[0.98]"

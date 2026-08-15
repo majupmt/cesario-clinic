@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import { whatsappLink } from '@/lib/whatsapp'
 
 const procedimentos = [
   {
@@ -376,7 +377,7 @@ export default function Servicos() {
 
               {/* WhatsApp button */}
               <a
-                href="https://wa.me/559984446966"
+                href={whatsappLink(`Olá, tenho interesse no procedimento ${selectedProc.nome}`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
