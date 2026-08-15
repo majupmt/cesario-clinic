@@ -8,7 +8,8 @@ const cursos = [
     tag: 'VIP',
     titulo: 'Curso VIP Presencial',
     desc: 'Formação intensiva e personalizada com acompanhamento individual da Yagna.',
-    imagem: '/images/cursos/vip-sistema-russo.jpeg',
+    // placeholder até a foto oficial do Curso VIP ser enviada — vip-sistema-russo.jpeg não existe em public/images/cursos
+    imagem: '/images/cursos/curso-expert-nails.jpeg',
   },
   {
     tag: 'PRESENCIAL',
@@ -51,14 +52,14 @@ export default function Cursos() {
             letterSpacing: '0.3em',
             color: 'rgba(255,255,255,0.4)',
             marginBottom: 16,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           FORMAÇÃO
         </p>
         <h2
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: 'clamp(1.9rem, 4vw, 2.8rem)',
             fontStyle: 'italic',
             fontWeight: 400,
@@ -138,7 +139,7 @@ export default function Cursos() {
                     letterSpacing: '0.3em',
                     color: 'rgba(255,255,255,0.4)',
                     marginBottom: 12,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "var(--font-inter), sans-serif",
                   }}
                 >
                   {curso.tag}
@@ -147,7 +148,7 @@ export default function Cursos() {
                 {/* Title */}
                 <h3
                   style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontFamily: "var(--font-playfair), Georgia, serif",
                     fontSize: '1.15rem',
                     fontWeight: 700,
                     color: '#ffffff',
@@ -164,7 +165,7 @@ export default function Cursos() {
                     fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.5)',
                     lineHeight: 1.7,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 300,
                   }}
                 >

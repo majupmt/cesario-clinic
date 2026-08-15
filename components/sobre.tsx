@@ -37,7 +37,7 @@ export default function Sobre() {
             letterSpacing: '0.45em',
             color: 'rgba(26,26,26,0.4)',
             marginBottom: 16,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           CONHEÇA
@@ -46,7 +46,7 @@ export default function Sobre() {
         {/* Título */}
         <h2
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
             fontWeight: 400,
             color: '#1a1a1a',
@@ -76,7 +76,7 @@ export default function Sobre() {
             src="/images/yagna-sorriso.jpeg"
             alt="Yagna Menezzes"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
           />
         </div>
 
@@ -87,7 +87,7 @@ export default function Sobre() {
             color: 'rgba(26,26,26,0.6)',
             lineHeight: 1.95,
             marginBottom: 20,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 300,
             maxWidth: 380,
           }}
@@ -102,7 +102,7 @@ export default function Sobre() {
             color: 'rgba(26,26,26,0.6)',
             lineHeight: 1.95,
             marginBottom: 40,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 300,
             maxWidth: 380,
           }}
@@ -131,7 +131,7 @@ export default function Sobre() {
                 fontSize: '0.6rem',
                 letterSpacing: '0.15em',
                 color: '#1a1a1a',
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 background: 'transparent',
               }}
             >

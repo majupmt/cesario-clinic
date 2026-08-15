@@ -17,7 +17,7 @@ export default function Footer() {
           letterSpacing: '0.35em',
           color: 'rgba(255,255,255,0.7)',
           marginBottom: 16,
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 500,
         }}
       >
@@ -40,7 +40,7 @@ export default function Footer() {
           fontSize: '0.65rem',
           color: 'rgba(255,255,255,0.25)',
           marginBottom: 8,
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 300,
           letterSpacing: '0.05em',
         }}
@@ -53,7 +53,7 @@ export default function Footer() {
         style={{
           fontSize: '0.6rem',
           color: 'rgba(255,255,255,0.15)',
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 300,
         }}
       >

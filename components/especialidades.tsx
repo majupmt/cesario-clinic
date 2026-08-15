@@ -68,14 +68,14 @@ export default function Especialidades() {
             letterSpacing: '0.3em',
             color: 'rgba(255,255,255,0.4)',
             marginBottom: 16,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           NOSSOS SERVIÇOS
         </p>
         <h2
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: 'clamp(2rem, 4vw, 2.8rem)',
             fontWeight: 700,
             color: '#ffffff',
@@ -102,7 +102,7 @@ export default function Especialidades() {
               {/* Title above card */}
               <p
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontFamily: "var(--font-playfair), Georgia, serif",
                   fontSize: '0.78rem',
                   color: '#ffffff',
                   marginBottom: 10,
@@ -143,7 +143,7 @@ export default function Especialidades() {
                     style={{
                       color: '#ffffff',
                       fontSize: '0.65rem',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       textAlign: 'center',
                       letterSpacing: '0.12em',
                       fontWeight: 400,

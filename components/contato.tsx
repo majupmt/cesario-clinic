@@ -17,7 +17,7 @@ export default function Contato() {
           letterSpacing: '0.45em',
           color: 'rgba(255,255,255,0.35)',
           marginBottom: 20,
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-inter), sans-serif",
         }}
       >
         CONTATO
@@ -26,7 +26,7 @@ export default function Contato() {
       {/* Heading */}
       <h2
         style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily: "var(--font-playfair), Georgia, serif",
           fontSize: 'clamp(2rem, 4vw, 2.8rem)',
           fontWeight: 400,
           color: '#ffffff',
@@ -53,7 +53,7 @@ export default function Contato() {
           fontSize: '0.85rem',
           color: 'rgba(255,255,255,0.4)',
           marginBottom: 48,
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 300,
         }}
       >
@@ -89,7 +89,7 @@ export default function Contato() {
             fontSize: '0.75rem',
             fontWeight: 500,
             letterSpacing: '0.15em',
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -119,7 +119,7 @@ export default function Contato() {
             fontSize: '0.75rem',
             fontWeight: 500,
             letterSpacing: '0.15em',
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -135,7 +135,7 @@ export default function Contato() {
           style={{
             fontSize: '0.78rem',
             color: 'rgba(255,255,255,0.35)',
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 300,
             letterSpacing: '0.05em',
           }}
@@ -146,7 +146,7 @@ export default function Contato() {
           style={{
             fontSize: '0.78rem',
             color: 'rgba(255,255,255,0.35)',
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 300,
             letterSpacing: '0.05em',
           }}
