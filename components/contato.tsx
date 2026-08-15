@@ -1,5 +1,7 @@
 'use client'
 
+import { whatsappLink } from '@/lib/whatsapp'
+
 export default function Contato() {
   return (
     <section
@@ -72,7 +74,7 @@ export default function Contato() {
       >
         {/* WhatsApp button */}
         <a
-          href="https://wa.me/559984446966"
+          href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
           className="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.35)] active:scale-[0.97]"
