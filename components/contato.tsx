@@ -75,6 +75,7 @@ export default function Contato() {
           href="https://wa.me/559984446966"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.35)] active:scale-[0.97]"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -84,7 +85,7 @@ export default function Contato() {
             padding: '14px 32px',
             background: '#ffffff',
             color: '#0a0a0a',
-            borderRadius: 4,
+            borderRadius: 10,
             textDecoration: 'none',
             fontSize: '0.75rem',
             fontWeight: 500,
@@ -104,6 +105,7 @@ export default function Contato() {
           href="https://instagram.com/yagnacesario"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -114,7 +116,7 @@ export default function Contato() {
             background: 'transparent',
             color: '#ffffff',
             border: '1px solid rgba(255,255,255,0.3)',
-            borderRadius: 4,
+            borderRadius: 10,
             textDecoration: 'none',
             fontSize: '0.75rem',
             fontWeight: 500,

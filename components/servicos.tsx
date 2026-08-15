@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 const procedimentos = [
@@ -45,6 +45,13 @@ export default function Servicos() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedProc, setSelectedProc] = useState<typeof procedimentos[0] | null>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    }
+  }, [])
 
   const scrollLeft = () => {
     carouselRef.current?.scrollBy({ left: -220, behavior: 'smooth' })
@@ -55,13 +62,17 @@ export default function Servicos() {
   }
 
   const openModal = (proc: typeof procedimentos[0]) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
     setSelectedProc(proc)
-    setModalOpen(true)
+    requestAnimationFrame(() => setModalOpen(true))
   }
 
   const closeModal = () => {
     setModalOpen(false)
-    setSelectedProc(null)
+    closeTimeoutRef.current = setTimeout(() => setSelectedProc(null), 300)
   }
 
   return (
@@ -115,13 +126,22 @@ export default function Servicos() {
           {procedimentos.map((proc, i) => (
             <div
               key={i}
+              role="button"
+              tabIndex={0}
+              aria-label={`Ver detalhes de ${proc.nome}`}
               onClick={() => openModal(proc)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  openModal(proc)
+                }
+              }}
+              className="group cursor-pointer"
               style={{
                 flexShrink: 0,
                 width: '46%',
                 maxWidth: 200,
                 scrollSnapAlign: 'start',
-                cursor: 'pointer',
                 textAlign: 'center',
               }}
             >
@@ -140,6 +160,7 @@ export default function Servicos() {
 
               {/* Card */}
               <div
+                className="transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_18px_34px_rgba(0,0,0,0.45)] group-active:scale-[0.98]"
                 style={{
                   height: 280,
                   borderRadius: 12,
@@ -153,6 +174,7 @@ export default function Servicos() {
                   src={proc.imagem}
                   alt={proc.nome}
                   fill
+                  className="transition-transform duration-500 ease-out group-hover:scale-105"
                   style={{ objectFit: 'cover' }}
                 />
                 <div
@@ -193,6 +215,8 @@ export default function Servicos() {
         >
           <button
             onClick={scrollLeft}
+            aria-label="Procedimento anterior"
+            className="transition-transform duration-200 hover:scale-110 active:scale-90"
             style={{
               width: 40,
               height: 40,
@@ -211,6 +235,8 @@ export default function Servicos() {
           </button>
           <button
             onClick={scrollRight}
+            aria-label="Próximo procedimento"
+            className="transition-transform duration-200 hover:scale-110 active:scale-90"
             style={{
               width: 40,
               height: 40,
@@ -249,8 +275,11 @@ export default function Servicos() {
       </section>
 
       {/* Modal */}
-      {modalOpen && selectedProc && (
+      {selectedProc && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedProc.nome}
           style={{
             position: 'fixed',
             inset: 0,
@@ -261,24 +290,33 @@ export default function Servicos() {
             justifyContent: 'center',
             zIndex: 100,
             padding: 24,
+            opacity: modalOpen ? 1 : 0,
+            pointerEvents: modalOpen ? 'auto' : 'none',
+            transition: 'opacity 280ms ease',
           }}
           onClick={closeModal}
         >
           <div
+            className="cc-light-surface"
             style={{
               background: '#ffffff',
-              borderRadius: 4,
+              borderRadius: 12,
               border: '1px solid #e0e0e0',
               maxWidth: 400,
               width: '100%',
               overflow: 'hidden',
               position: 'relative',
+              transform: modalOpen ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.96)',
+              opacity: modalOpen ? 1 : 0,
+              transition: 'transform 320ms cubic-bezier(0.2,0.8,0.2,1), opacity 320ms ease',
             }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={closeModal}
+              aria-label="Fechar"
+              className="transition-transform duration-200 hover:scale-110 active:scale-90"
               style={{
                 position: 'absolute',
                 top: 16,
@@ -341,6 +379,7 @@ export default function Servicos() {
                 href="https://wa.me/559984446966"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
                 style={{
                   display: 'block',
                   width: '100%',
@@ -348,7 +387,7 @@ export default function Servicos() {
                   background: '#ffffff',
                   color: '#0a0a0a',
                   textAlign: 'center',
-                  borderRadius: 4,
+                  borderRadius: 10,
                   textDecoration: 'none',
                   fontSize: '0.75rem',
                   fontWeight: 500,
