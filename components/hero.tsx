@@ -37,7 +37,7 @@ export default function Hero() {
           src="/images/yagna-pose.jpeg"
           alt="Yagna Cesario"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+          style={{ objectFit: 'cover', objectPosition: 'center 12%' }}
           priority
         />
       </div>
@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Name */}
         <h1
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: '2.8rem',
             fontWeight: 700,
             color: '#1a1a1a',
@@ -104,7 +104,7 @@ export default function Hero() {
             letterSpacing: '0.3em',
             color: 'rgba(26,26,26,0.5)',
             margin: '0 0 8px 0',
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 400,
           }}
         >
@@ -116,7 +116,7 @@ export default function Hero() {
             letterSpacing: '0.3em',
             color: 'rgba(26,26,26,0.35)',
             margin: 0,
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 400,
           }}
         >

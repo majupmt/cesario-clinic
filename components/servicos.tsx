@@ -81,14 +81,14 @@ export default function Servicos() {
               letterSpacing: '0.45em',
               color: 'rgba(255,255,255,0.35)',
               marginBottom: 16,
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
             }}
           >
             TRATAMENTOS
           </p>
           <h2
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 'clamp(2rem, 4vw, 2.8rem)',
               fontWeight: 400,
               fontStyle: 'italic',
@@ -128,7 +128,7 @@ export default function Servicos() {
               {/* Title above card */}
               <p
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontFamily: "var(--font-playfair), Georgia, serif",
                   fontSize: '0.78rem',
                   color: '#ffffff',
                   marginBottom: 10,
@@ -169,7 +169,7 @@ export default function Servicos() {
                     style={{
                       color: '#ffffff',
                       fontSize: '0.65rem',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "var(--font-inter), sans-serif",
                       textAlign: 'center',
                       letterSpacing: '0.08em',
                     }}
@@ -240,7 +240,7 @@ export default function Servicos() {
               fontSize: '0.7rem',
               letterSpacing: '0.12em',
               color: 'rgba(255,255,255,0.5)',
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
             }}
           >
             Clique no procedimento e agende!
@@ -314,7 +314,7 @@ export default function Servicos() {
             <div style={{ padding: '28px 28px 32px' }}>
               <h3
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontFamily: "var(--font-playfair), Georgia, serif",
                   fontSize: '1.35rem',
                   fontWeight: 700,
                   color: '#0a0a0a',
@@ -329,7 +329,7 @@ export default function Servicos() {
                   color: '#666',
                   lineHeight: 1.75,
                   marginBottom: 28,
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -353,7 +353,7 @@ export default function Servicos() {
                   fontSize: '0.75rem',
                   fontWeight: 500,
                   letterSpacing: '0.15em',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "var(--font-inter), sans-serif",
                 }}
               >
                 AGENDAR
