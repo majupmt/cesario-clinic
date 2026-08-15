@@ -18,6 +18,13 @@ const cursos = [
     imagem: '/images/cursos/presencial-manicure-4em1.jpeg',
   },
   {
+    tag: 'PRESENCIAL',
+    titulo: 'Pedicure Premium',
+    desc: 'Diagnóstico da pele, reconstrução de borda livre e nail art moderna nos pés.',
+    // placeholder até o flyer oficial (presencial-pedicure-premium.jpeg) ser enviado para public/images/cursos
+    imagem: '/images/procedimentos/podal-russo.jpeg',
+  },
+  {
     tag: 'TÉCNICA',
     titulo: 'Soft Gel sem Lixamento',
     desc: 'Aprenda a técnica que preserva a unha natural com acabamento perfeito.',
