@@ -22,7 +22,7 @@ const procedimentos = [
   {
     nome: 'Banho de Gel Cesario',
     desc: 'Método exclusivo que fortalece, protege e uniformiza a unha natural sem espessura excessiva.',
-    imagem: '/images/procedimentos/yagna-tesouras-mao.jpeg',
+    imagem: '/images/procedimentos/banho-de-gel.jpeg',
   },
   {
     nome: 'Esmaltação em Gel',
